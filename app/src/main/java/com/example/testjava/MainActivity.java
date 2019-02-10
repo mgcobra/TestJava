@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Button addBtn = findViewById(R.id.AddBtn);
         addBtn.setOnClickListener(new View.OnClickListener() {
             int res;
@@ -26,6 +28,23 @@ public class MainActivity extends AppCompatActivity {
                 int n2 = Integer.parseInt(num2.getText().toString());
                 res += n1 + n2;
                 resultTextView.setText(res + "");
+            }
+        });
+
+        Button togBtn = findViewById(R.id.togBtn);
+        togBtn.setOnClickListener(new View.OnClickListener() {
+            Boolean pic=false;
+            @Override
+            public void onClick(View v) {
+                ImageView imgView = findViewById(R.id.img1);
+                if (pic) {
+                    imgView.setImageResource(R.drawable.Front_side);
+                    pic=false;
+                }
+                else {
+                    imgView.setImageResource(R.drawable.grass);
+                    pic = true;
+                }
             }
         });
 
