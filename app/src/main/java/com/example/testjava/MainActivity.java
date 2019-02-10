@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ImageView imgView = findViewById(R.id.img1);
                 if (pic) {
-                    imgView.setImageResource(R.drawable.Front_side);
+                    imgView.setImageResource(R.drawable.front_side);
                     pic=false;
                 }
                 else {
